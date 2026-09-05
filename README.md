@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="StrongbodyStrongmind - AI Compiler Engineer" width="100%" />
+  <img src="./banner.svg" alt="StrongbodyStrongmind - AI Compiler Engineer" width="100%" />
 </p>
 
 # StrongbodyStrongmind
@@ -25,7 +25,7 @@ Tensor IR -> Scheduling -> Compiler Passes -> Lowering -> CodeGen -> Hardware Pe
 ## TVM Compiler Stack
 
 <p align="center">
-  <img src="./assets/compiler-pipeline.svg" alt="TVM compiler pipeline from model and graph IR to TensorIR, TIR, CodeGen, runtime, CPU and GPU" width="100%" />
+  <img src="./compiler-pipeline.svg" alt="TVM compiler pipeline from model and graph IR to TensorIR, TIR, CodeGen, runtime, CPU and GPU" width="100%" />
 </p>
 
 ## Current Focus
