@@ -1,0 +1,102 @@
+<svg width="1100" height="360" viewBox="0 0 1100 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">TVM compiler pipeline</title>
+  <desc id="desc">A compact compiler pipeline diagram from model and graph representation through Relax or Relay, TensorIR, scheduling, TIR passes, lowering, CodeGen, runtime, and CPU or GPU execution.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1100" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef6ff"/>
+    </linearGradient>
+    <linearGradient id="darkPanel" x1="0" y1="0" x2="1100" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="80" y1="170" x2="1018" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="0.48" stop-color="#0891b2"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 22px Inter, Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .label { font: 700 16px Inter, Segoe UI, Arial, sans-serif; fill: #0f172a; }
+      .sub { font: 13px Inter, Segoe UI, Arial, sans-serif; fill: #475569; }
+      .mono { font: 12px Consolas, Menlo, monospace; fill: #334155; }
+      .box { fill: #ffffff; stroke: #cbd5e1; }
+      .focus { fill: #eff6ff; stroke: #38bdf8; }
+      .line { stroke: url(#accent); stroke-width: 3; }
+      .bg { fill: url(#panel); }
+      @media (prefers-color-scheme: dark) {
+        .title, .label { fill: #f8fafc; }
+        .sub { fill: #cbd5e1; }
+        .mono { fill: #bae6fd; }
+        .box { fill: #111827; stroke: #334155; }
+        .focus { fill: #0f1c2e; stroke: #22d3ee; }
+        .bg { fill: url(#darkPanel); }
+      }
+    </style>
+  </defs>
+
+  <rect width="1100" height="360" rx="18" class="bg"/>
+  <rect x="22" y="22" width="1056" height="316" rx="14" fill="none" stroke="#94a3b8" opacity="0.45"/>
+
+  <text x="54" y="64" class="title">TVM Compiler Pipeline</text>
+  <text x="54" y="91" class="sub">A compact view of the path from tensor programs to hardware performance.</text>
+
+  <path d="M93 178H1004" class="line"/>
+  <path d="M1004 178L986 168V188L1004 178Z" fill="#7c3aed"/>
+
+  <g>
+    <rect x="54" y="132" width="116" height="92" rx="8" class="box"/>
+    <text x="112" y="166" text-anchor="middle" class="label">Model</text>
+    <text x="112" y="190" text-anchor="middle" class="sub">Graph</text>
+    <text x="112" y="210" text-anchor="middle" class="mono">input</text>
+  </g>
+
+  <g>
+    <rect x="190" y="132" width="124" height="92" rx="8" class="box"/>
+    <text x="252" y="162" text-anchor="middle" class="label">Relax</text>
+    <text x="252" y="184" text-anchor="middle" class="sub">or Relay</text>
+    <text x="252" y="207" text-anchor="middle" class="mono">graph IR</text>
+  </g>
+
+  <g>
+    <rect x="334" y="120" width="132" height="116" rx="8" class="focus"/>
+    <text x="400" y="154" text-anchor="middle" class="label">TensorIR</text>
+    <text x="400" y="178" text-anchor="middle" class="sub">TIR</text>
+    <text x="400" y="202" text-anchor="middle" class="mono">loops + buffers</text>
+  </g>
+
+  <g>
+    <rect x="486" y="132" width="124" height="92" rx="8" class="focus"/>
+    <text x="548" y="166" text-anchor="middle" class="label">Schedule</text>
+    <text x="548" y="190" text-anchor="middle" class="sub">tile / bind</text>
+    <text x="548" y="210" text-anchor="middle" class="mono">transform</text>
+  </g>
+
+  <g>
+    <rect x="630" y="132" width="124" height="92" rx="8" class="focus"/>
+    <text x="692" y="166" text-anchor="middle" class="label">TIR Passes</text>
+    <text x="692" y="190" text-anchor="middle" class="sub">simplify</text>
+    <text x="692" y="210" text-anchor="middle" class="mono">lowering</text>
+  </g>
+
+  <g>
+    <rect x="774" y="132" width="116" height="92" rx="8" class="box"/>
+    <text x="832" y="166" text-anchor="middle" class="label">CodeGen</text>
+    <text x="832" y="190" text-anchor="middle" class="sub">target code</text>
+    <text x="832" y="210" text-anchor="middle" class="mono">native</text>
+  </g>
+
+  <g>
+    <rect x="910" y="132" width="124" height="92" rx="8" class="box"/>
+    <text x="972" y="166" text-anchor="middle" class="label">Runtime</text>
+    <text x="972" y="190" text-anchor="middle" class="sub">execute</text>
+    <text x="972" y="210" text-anchor="middle" class="mono">CPU / GPU</text>
+  </g>
+
+  <g opacity="0.88">
+    <rect x="338" y="266" width="278" height="42" rx="7" fill="#0f172a"/>
+    <text x="356" y="292" font-family="Consolas, Menlo, monospace" font-size="14" fill="#bae6fd">for tile in block: bind(threadIdx.x)</text>
+    <rect x="638" y="266" width="254" height="42" rx="7" fill="#0f172a"/>
+    <text x="656" y="292" font-family="Consolas, Menlo, monospace" font-size="14" fill="#ddd6fe">optimize memory + indices</text>
+  </g>
+</svg>
