@@ -5,7 +5,8 @@ AI Compiler Engineer focused on TVM, TensorIR/TIR and compiler performance optim
 ## Open Source
 
 - [apache/tvm#20265](https://github.com/apache/tvm/pull/20265) — [TIR] Ignore None-valued pragma annotations. Open.
-
+- [apache/tvm#20286](https://github.com/apache/tvm/pull/20286) — [Relax][ONNX] Preserve bool dtype when folding constant comparisons. Open.
+  
 ## Projects
 
 - [tensortrail](https://github.com/StrongbodyStrongmind/tensortrail) — An educational tensor compiler project exploring IR, lowering and code generation. Early development.
