@@ -1,4 +1,4 @@
-# StrongbodyStrongmind
+# renggang wu
 
 AI Compiler Engineer focused on TVM, TensorIR/TIR and compiler performance optimization.
 
